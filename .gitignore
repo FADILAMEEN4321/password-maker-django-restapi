@@ -1,0 +1,7 @@
+.env
+__pycache__
+venv-fortifykey/
+db.sqlite3
+*.pyc
+*.pyo
+*.pyd
