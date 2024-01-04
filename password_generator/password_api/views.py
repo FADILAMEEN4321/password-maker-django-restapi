@@ -10,6 +10,7 @@ class GeneratePasswordView(views.APIView):
     def post(self, request):
         try:
             length = request.data.get("length", 12)
+            print(length)
             complexity = request.data.get(
                 "complexity", ["uppercase", "lowercase", "numbers", "special"]
             )
@@ -31,6 +32,11 @@ class GeneratePasswordView(views.APIView):
                 characters += string.digits
             if "special" in complexity:
                 characters += string.punctuation
+            if "emojis" in complexity:
+                # Add emojis to the character set
+                characters += "😀😍🔒🌟🎉🚀🔑🌈"
+            if "math" in complexity:
+                characters += "+-*/=^"
 
             password = "".join(random.choice(characters) for i in range(length))
 
