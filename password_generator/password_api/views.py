@@ -33,7 +33,6 @@ class GeneratePasswordView(views.APIView):
             if "special" in complexity:
                 characters += string.punctuation
             if "emojis" in complexity:
-                # Add emojis to the character set
                 characters += "😀😍🔒🌟🎉🚀🔑🌈"
             if "math" in complexity:
                 characters += "+-*/=^"
